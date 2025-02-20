@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Fetching data with promises</title>
+  </head>
+  <body>
+    <script>
+      // let url = 'images/coffee.jpg';
+      // fetch(url)
+      // .then(function(response) {
+      //     return response.blob();
+      // })
+      // .then(function(blob) {
+      //   let objectURL = URL.createObjectURL(blob);
+      //   let image = document.createElement('img');
+      //   image.src = objectURL;
+      //   document.body.appendChild(image);
+      // })
+      // .catch(function(err) {
+      //   console.log('Fetch problem: ' + err.message);
+      // });
+
+      const url = 'images/coffee.jpg';
+
+      const asyncFetch = async () => {
+        let response = await fetch(url);
+
+        if(!response) {
+          console.error('error receiving response')
+        }
+        
+        let blob = await response.blob  
+      };
+
+      asyncFetch()
+    </script>
+  </body>
+</html>
